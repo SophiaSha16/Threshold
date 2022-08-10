@@ -1,7 +1,7 @@
-export const COOCKED = "COOCKED"
-export const RAW = "RAW"
+const COOCKED = "coocked"
+const RAW = "raw"
 
-export const ingredientsNames = {
+const ingredientsNames = {
   "Fire Salt": "fire_salt",
   "Frost Salts": "frost_salts",
   "Deathball": "deathball",
@@ -27,7 +27,7 @@ export const ingredientsNames = {
   "Glowing Mushroom": "glowing_mushroom"
 }
 
-export const ingredients = {
+const ingredients = {
   "Fire Salt raw": {mode:RAW, ingridient:ingredientsNames["Fire Salt"]},
   "Fire Salt cooked": {mode:COOCKED, ingridient:ingredientsNames["Fire Salt"]},
 
@@ -97,7 +97,8 @@ export const ingredients = {
   "Glowing Mushroom raw": {mode:RAW, ingridient:ingredientsNames["Glowing Mushroom"]},
   "Glowing Mushroom cooked": {mode:COOCKED, ingridient:ingredientsNames["Glowing Mushroom"]},
 }
-export const potions = {
+
+const potions = {
   "Resist Fire": [ingredients["Dragon Bone cooked"], ingredients["Fire Salt raw"]],
   "Damage Health": [ingredients["Fire Salt cooked"], ingredients["Nirnroot raw"], ingredients["Nightshade cooked"], ingredients["Butterfly Wings cooked"]],
   "Resist Frost": [ingredients["Frost salts cooked"], ingredients["Mountian Flower raw"]],
@@ -114,11 +115,25 @@ export const potions = {
   "Antidote": [ingredients["Deathball raw"], ingredients["Briar Heart cooked"], ingredients["Caniss Root raw"]],
   "Damage Magicka": [ingredients["Deadra Heart raw"], ingredients["Glowing Mushroom cooked"]],
 }
-export const getMapPotionsFormula = () => {
+
+const getAllCombinations = (ingList) => {
+  return ingList.reduce( (acc, v, i) =>
+    acc.concat(ingList.slice(i+1).map( w => [v, w] )),
+  []);
+}
+
+const getIngridientCodeName = (ing) => {
+  return `${ing.ingridient}_${ing.mode}`
+}
+
+const getMapPotionsFormula = () => {
   const formulaMap = {}
-  Object.keys(potions).forEach((potion) => {
-    potion.forEach((ing) => {
-      formulaMap
+  Object.keys(potions).forEach((potionName) => {
+    getAllCombinations(potions[potionName]).map(_ => {
+      formulaMap[`${getIngridientCodeName(_[0])}_${getIngridientCodeName(_[1])}`] = potionName
+      formulaMap[`${getIngridientCodeName(_[1])}_${getIngridientCodeName(_[0])}`] = potionName
     })
   })
+  return formulaMap
 }
+console.log(getMapPotionsFormula());
