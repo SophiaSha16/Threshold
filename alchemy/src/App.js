@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { reactLocalStorage } from "reactjs-localstorage";
 
 function App() {
-  const [formula, setFurmula] = useState("");
+  const [formula, setFurmula] = useState(null);
   const [counters, setCounters] = useState(initCounters);
   const [notes, setNotes] = useState([]);
   const [curNote, setCurNote] = useState("");
@@ -25,7 +25,7 @@ function App() {
       setNotes(reactLocalStorage.getObject(formula).notes || []);
       setFurmula(formula);
     } else {
-      setFurmula(null);
+      setFurmula("");
       setNotes([]);
     }
   };
@@ -56,7 +56,7 @@ function App() {
             <div className="generatorInputs">
               <GeneratorInputsForm setFormula={(formula) => onSetFormula(formula)} />
             </div>
-            <div className="generatorOutputs">{formula ? getPotionInfo(formula) : ""}</div>
+            <div className="generatorOutputs">{formula !== null ? getPotionInfo(formula) : ""}</div>
           </div>
           <div className="counters">
             <div>{counterDisplay()}</div>
