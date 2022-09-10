@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ingredientsNames, getMapPotionsFormula } from "../assests/formula.generator.js";
 
 export default function GeneratorInputsForm(props) {
-  const [ing1, setIng1] = useState("fire_salt");
-  const [ing2, setIng2] = useState("fire_salt");
+  const [ing1, setIng1] = useState("fire_salts");
+  const [ing2, setIng2] = useState("fire_salts");
   const [ingS1, setIngS1] = useState("raw");
   const [ingS2, setIngS2] = useState("raw");
 
@@ -14,7 +14,7 @@ export default function GeneratorInputsForm(props) {
   const ingStateSelect = (
     <>
       <option value="raw">raw</option>
-      <option value="coocked">cooked</option>
+      <option value="cooked">cooked</option>
     </>
   );
 
@@ -24,18 +24,18 @@ export default function GeneratorInputsForm(props) {
   };
 
   return (
-    <div>
-      <div>
-        <div>
+    <div className="ingsCon">
+      <div className="ings">
+        <div className="ing1">
           <select onChange={(e) => setIng1(e.target.value)}>{ingSelect}</select>
-          <select onChange={(e) => setIng2(e.target.value)}>{ingSelect}</select>
-        </div>
-        <div>
           <select onChange={(e) => setIngS1(e.target.value)}>{ingStateSelect}</select>
+        </div>
+        <div className="ing2">
+          <select onChange={(e) => setIng2(e.target.value)}>{ingSelect}</select>
           <select onChange={(e) => setIngS2(e.target.value)}>{ingStateSelect}</select>
         </div>
       </div>
-      <button onClick={onGenerateFomula}>generate formula</button>
+      <button className="button-65" onClick={onGenerateFomula}>Generate formula</button>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import "./App.css";
 import { getPotionInfo, NO_INFLUANCE, initCounters } from "./assests/formula.generator.js";
 import { useState, useEffect } from "react";
 import { reactLocalStorage } from "reactjs-localstorage";
+import logo from "../src/assests/logo.png"
 
 function App() {
   const [formula, setFurmula] = useState(null);
@@ -59,14 +60,14 @@ function App() {
             <div className="generatorOutputs">{formula !== null ? getPotionInfo(formula) : ""}</div>
           </div>
           <div className="counters">
-            <div>{counterDisplay()}</div>
+            <div className="countersDisplay">{counterDisplay()}</div>
           </div>
         </div>
 
         <div className="styleCol">
           <div></div>
           <div>
-            <img src=""></img>
+            <img src={logo} alt="Logo" />
           </div>
         </div>
 
@@ -79,7 +80,7 @@ function App() {
           <textarea className="notesInput" value={curNote} onChange={(e) => setCurNote(e.target.value)} />
           <button
             disabled={!formula}
-            className="notesBtn"
+            className="button-65"
             onClick={() => {
               onSaveNote();
             }}

@@ -1,7 +1,15 @@
+body {
+  background-color: #23314f;
+  font: bold 1em/100% "Helvetica Neue", Arial, sans-serif;
+  padding: 2em 0;
+  text-align: center;
+  color: white;
+}
+
 .mainCon {
   width: 80vw;
   height: 80vh;
-  background: bisque;
+  background: white;
   margin: 8vh 8vw;
   padding: 2vh 2vw;
   display: flex;
@@ -11,62 +19,292 @@
 .generatorCon{
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: #23314f;
   flex: 2;
 }
 
 .styleCol {
   width: 100%;
   height: 100%;
-  background-color: blue;
+  background-color: white;
   flex: 1;
+}
+
+img {
+  height: 100%;
+  width: 100%;
 }
 
 .notes {
   width: 100%;
   height: 100%;
-  background-color: yellow;
+  background-color: #23314f;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
+
 .generator{
   display: flex;
-  background-color: rgb(148, 148, 14);
   flex-direction: column;
   width: 100%;
     height: 50%;
 }
+
 .generatorInputs{
-  background-color: rgb(174, 52, 127);
   width: 100%;
-  height: 80%;
+  height: 65%;
 }
+
+.ingsCon{
+  height: 100%;
+  width: 100%;
+}
+
+.ingsCon > * {
+  text-align: center;
+  margin-top: 10px;
+}
+
 .generatorOutputs{
-  background-color: rgb(28, 153, 101);
+  background-color: #d6d6d6;
   width: 100%;
-  height: 20%;
+  height: 30%;
+  color: #23314f;
 }
+
 .counters{
   width: 100%;
   height: 50%;
-  background-color: rgb(154, 161, 237);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
-.counterItme{
-  width: 50%;
+
+.countersDisplay {
+  width: 100%;
+  height: 100%;
+  display: contents;
 }
+
+.counterItme{
+  width: 45%;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+
 .notesHistory{
   width: 100%;
   height: 40%;
   overflow: auto;
 }
-.notesInput{
-  width: 100%;
-  height: 56%;
-}
-.notesBtn{
 
+.notesInput{
+  width: 95%;
+  height: 50%;
+  margin: auto;
+}
+
+select {
+
+  /* styling */
+  background-color: #d6d6d6;
+  border: thin solid #23314f;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+/* arrows */
+
+select.classic {
+  background-image:
+    linear-gradient(45deg, transparent 50%, blue 50%),
+    linear-gradient(135deg, blue 50%, transparent 50%),
+    linear-gradient(to right, skyblue, skyblue);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+
+select.classic:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+
+
+
+
+select.round {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    radial-gradient(#ddd 70%, transparent 72%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.round:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    radial-gradient(gray 70%, transparent 72%);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+
+
+
+
+select.minimal {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+  background-image:
+    linear-gradient(45deg, green 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, green 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+
+/* CSS */
+.button-65 {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #d6d6d6;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #23314f;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 14px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+  margin: auto;
+}
+
+.button-65:hover {
+  background-color: #1366d6;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-65:hover:after {
+  opacity: .5;
+}
+
+.button-65:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-65:active:after {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .button-65 {
+    padding: 14px 22px;
+    width: 176px;
+  }
 }
