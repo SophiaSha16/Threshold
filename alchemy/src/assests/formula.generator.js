@@ -19,7 +19,6 @@ export const ingredientsNames = {
   "Honeycomb": "honeycomb",
   "Chikens Egg": "chikens_egg",
   "Giants Toe": "giants_toe",
-  "Moon Suger": "moon_suger",
   "Creep Closter": "creep_closter",
   "Dragon Bone": "dragon_bone",
   "Briar Heart": "briar_heart",
@@ -27,6 +26,7 @@ export const ingredientsNames = {
   "Canis Root": "canis_root",
   "Mountian Flower": "mountian_flower",
   "Glowing Mushroom": "glowing_mushroom",
+  "Dwavern Oil": "dwavern_oil",
 };
 
 const ingredients = {
@@ -75,8 +75,8 @@ const ingredients = {
   "Giants Toe raw": { mode: RAW, ingridient: ingredientsNames["Giants Toe"] },
   "Giants Toe cooked": { mode: COOKED, ingridient: ingredientsNames["Giants Toe"] },
 
-  "Moon Suger raw": { mode: RAW, ingridient: ingredientsNames["Moon Suger"] },
-  "Moon Suger cooked": { mode: COOKED, ingridient: ingredientsNames["Moon Suger"] },
+  "Dwavern Oil raw": { mode: RAW, ingridient: ingredientsNames["Dwavern Oil"] },
+  "Dwavern Oil cooked": { mode: COOKED, ingridient: ingredientsNames["Dwavern Oil"] },
 
   "Creep Closter raw": { mode: RAW, ingridient: ingredientsNames["Creep Closter"] },
   "Creep Closter cooked": { mode: COOKED, ingridient: ingredientsNames["Creep Closter"] },
@@ -109,14 +109,13 @@ const potions = {
     ingredients["Butterfly Wings cooked"],
   ],
   "Resist Frost": [ingredients["Frost salts cooked"], ingredients["Mountian Flower raw"]],
-  Paralyze: [ingredients["Fire Salts cooked"], ingredients["Bee raw"], ingredients["Canis Root cooked"]],
+  Paralyze: [ingredients["Bee raw"], ingredients["Canis Root cooked"]],
   Poison: [ingredients["Deathball cooked"], ingredients["Bone Meal raw"], ingredients["Chikens Egg raw"]],
   Invisibility: [ingredients["Vampire Dust cooked"], ingredients["Giants Toe raw"]],
   "Restore Magicka": [
     ingredients["Vampire Dust raw"],
     ingredients["Bee cooked"],
     ingredients["Pearl raw"],
-    ingredients["Moon Suger cooked"],
   ],
   "Resist Magic": [
     ingredients["Nirnroot cooked"],
@@ -129,7 +128,7 @@ const potions = {
     ingredients["Creep Closter raw"],
     ingredients["Void Salts raw"],
   ],
-  "Frenzy": [ingredients["Falmer Ear raw"], ingredients["Moon Suger raw"], ingredients["Briar Heart raw"]],
+  "Frenzy": [ingredients["Falmer Ear raw"], ingredients["Briar Heart raw"]],
   "Restore Health": [
     ingredients["Butterfly Wings raw"],
     ingredients["Honeycomb raw"],
@@ -146,7 +145,7 @@ const potions = {
 };
 export const potionInfo = {
   "Resist Fire": "Resist Fire: מבטל אפקט ראשון של אש ",
-  "Damage Health": 'Damage Health: מוריד נק"פ 1 קבוע ליום (מצטבר)',
+  "Damage Health": 'Damage Health: מוריד נק"פ 1 קבוע לקרב (מצטבר)',
   "Resist Frost": "Resist Frost: מבטל אפקט אחד של כפור",
   "Paralyze": "Paralyze: דמות שהופעל עליה תקפא במקום (רצוי באותה התנוחה שהייתה) למשך 5 שניות בהם היא תהיה עמידה לנזק ושאר השפעות, יש להמתין 2 שניות של אדיבות משחקית לפני שמתחילים לתקוף דמות שהשתחררה מהקפאה.",
   "Poison": "Poison: להחלטת המאסטר (יכול להיות כל דבר מלבד: paralyze, fear, frenzy)",
@@ -156,7 +155,7 @@ export const potionInfo = {
   "Fear": "Fear: הדמות תנהג כאילו המטיל הוא הפחד הגדול ביותר שלה למשך כ10 שניות (לשיקול השחקן האם הוא בורח/מתקפל על הרצפה בפחד/תגובה הולמת אחרת).",
   "Frenzy": "Frenzy: הדמות לא תוכל להבדיל בין חבר לאויב ותיכנס להתקף זעם בלתי נשלט לכ10 שניות בה היא תתחיל לתקוף את כל מי שמולה.",
   "Restore Health": 'Restore Health: מרפא נק"פ מלא (לא יעלה נק"פ מעל המקסימום אלא רק ירפא מה שאבד).',
-  "Fortify Health": 'Fortify Health: מוסיף 1 נק"פ ליום (מצטבר)',
+  "Fortify Health": 'Fortify Health: מוסיף 1 נק"פ לקרב (מצטבר)',
   "Resist Poison": "Resist Poison: חסינות לרעל אחד מסוג POISON בלבד, לא עובד על רעלים מסוג אחר",
   "Antidote": "Antidote: מרפא כל סוג של רעל או אפקט",
   "Damage Magicka": "Damage Magicka: הורדת יכולת קסומה 1 (מצטבר)",
