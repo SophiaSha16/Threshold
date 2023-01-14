@@ -27,6 +27,8 @@ export const ingredientsNames = {
   "Mountian Flower": "mountian_flower",
   "Glowing Mushroom": "glowing_mushroom",
   "Dwavern Oil": "dwavern_oil",
+  "Dwemer Part": "dwemer_part",
+  "Common Mushroom": "common_mushroom"
 };
 
 const ingredients = {
@@ -98,6 +100,12 @@ const ingredients = {
 
   "Glowing Mushroom raw": { mode: RAW, ingridient: ingredientsNames["Glowing Mushroom"] },
   "Glowing Mushroom cooked": { mode: COOKED, ingridient: ingredientsNames["Glowing Mushroom"] },
+
+  "Dwemer Part raw": { mode: RAW, ingridient: ingredientsNames["Dwemer Part"] },
+  "Dwemer Part cooked": { mode: COOKED, ingridient: ingredientsNames["Dwemer Part"] },
+
+  "Common Mushroom raw": { mode: RAW, ingridient: ingredientsNames["Common Mushroom"] },
+  "Common Mushroom cooked": { mode: COOKED, ingridient: ingredientsNames["Common Mushroom"] },
 };
 
 const potions = {
@@ -142,6 +150,7 @@ const potions = {
   "Resist Poison": [ingredients["Glowing Mushroom cooked"], ingredients["Falmer Ear cooked"]],
   "Antidote": [ingredients["Deathball raw"], ingredients["Briar Heart cooked"], ingredients["Canis Root raw"]],
   "Damage Magicka": [ingredients["Deadra Heart raw"], ingredients["Glowing Mushroom cooked"]],
+  "Glue": [ingredients["Dwevern Oil cooked"], ingredients["Dwemwr Part raw"]],
 };
 export const potionInfo = {
   "Resist Fire": "Resist Fire: מבטל אפקט ראשון של אש ",
@@ -159,6 +168,7 @@ export const potionInfo = {
   "Resist Poison": "Resist Poison: חסינות לרעל אחד מסוג POISON בלבד, לא עובד על רעלים מסוג אחר",
   "Antidote": "Antidote: מרפא כל סוג של רעל או אפקט",
   "Damage Magicka": "Damage Magicka: הורדת יכולת קסומה 1 (מצטבר)",
+  "Glue": "דבק הנותן הלחם בין טכנולוגיה לאלכימיה"
 };
 export const getPotionInfo = (potion) => {
   return potionInfo[potion] ? potionInfo[potion] : NO_INFLUANCE;
@@ -199,4 +209,5 @@ export const initCounters = {
   "Resist Poison": 0,
   Antidote: 0,
   "Damage Magicka": 0,
+  "Glue": 0,
 };
