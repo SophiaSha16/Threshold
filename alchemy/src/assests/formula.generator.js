@@ -4,31 +4,31 @@ const RAW = "raw";
 export const NO_INFLUANCE = "אין השפעה";
 
 export const ingredientsNames = {
-  "Fire Salts": "fire_salts",
-  "Frost Salts": "frost_salts",
-  "Deathball": "deathball",
-  "Vampire Dust": "vampire_dust",
-  "Bone Meal": "bone_meal",
-  "Nirnroot": "nirnroot",
-  "Deadra Heart": "deadra_heart",
-  "Falmer Ear": "falmer_ear",
-  "Nightshade": "nightshade",
   "Bee": "bee",
-  "Butterfly Wings": "butterfly_wings",
-  "Pearl": "pearl",
-  "Honeycomb": "honeycomb",
-  "Chikens Egg": "chikens_egg",
-  "Giants Toe": "giants_toe",
-  "Creep Closter": "creep_closter",
-  "Dragon Bone": "dragon_bone",
+  "Bone Meal": "bone_meal",
   "Briar Heart": "briar_heart",
-  "Void Salts": "void_salts",
+  "Butterfly Wings": "butterfly_wings",
+  "Chikens Egg": "chikens_egg",
   "Canis Root": "canis_root",
-  "Mountian Flower": "mountian_flower",
-  "Glowing Mushroom": "glowing_mushroom",
+  "Common Mushroom": "common_mushroom",
+  "Creep Closter": "creep_closter",
+  "Deadra Heart": "deadra_heart",
+  "Deathball": "deathball",
+  "Dragon Bone": "dragon_bone",
   "Dwavern Oil": "dwavern_oil",
   "Dwemer Part": "dwemer_part",
-  "Common Mushroom": "common_mushroom"
+  "Falmer Ear": "falmer_ear",
+  "Fire Salts": "fire_salts",
+  "Frost Salts": "frost_salts",
+  "Giants Toe": "giants_toe",
+  "Glowing Mushroom": "glowing_mushroom",
+  "Honeycomb": "honeycomb",
+  "Mountian Flower": "mountian_flower",
+  "Nightshade": "nightshade",
+  "Nirnroot": "nirnroot",
+  "Pearl": "pearl",
+  "Vampire Dust": "vampire_dust",
+  "Void Salts": "void_salts",
 };
 
 const ingredients = {
@@ -150,7 +150,7 @@ const potions = {
   "Resist Poison": [ingredients["Glowing Mushroom cooked"], ingredients["Falmer Ear cooked"]],
   "Antidote": [ingredients["Deathball raw"], ingredients["Briar Heart cooked"], ingredients["Canis Root raw"]],
   "Damage Magicka": [ingredients["Deadra Heart raw"], ingredients["Glowing Mushroom cooked"]],
-  "Glue": [ingredients["Dwevern Oil cooked"], ingredients["Dwemwr Part raw"]],
+  "Glue": [ingredients["Dwavern Oil cooked"], ingredients["Dwemer Part raw"]],
 };
 export const potionInfo = {
   "Resist Fire": "Resist Fire: מבטל אפקט ראשון של אש ",
@@ -175,6 +175,7 @@ export const getPotionInfo = (potion) => {
 };
 
 const getAllCombinations = (ingList) => {
+  console.log(ingList)
   return ingList.reduce((acc, v, i) => acc.concat(ingList.slice(i + 1).map((w) => [v, w])), []);
 };
 

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ingredientsNames, getMapPotionsFormula } from "../assests/formula.generator.js";
 
 export default function GeneratorInputsForm(props) {
-  const [ing1, setIng1] = useState("fire_salts");
-  const [ing2, setIng2] = useState("fire_salts");
+  const [ing1, setIng1] = useState("bee");
+  const [ing2, setIng2] = useState("bee");
   const [ingS1, setIngS1] = useState("raw");
   const [ingS2, setIngS2] = useState("raw");
 
